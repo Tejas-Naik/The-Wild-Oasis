@@ -21,7 +21,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-`
+`;
 
 function AppLayout() {
   return (
@@ -29,9 +29,9 @@ function AppLayout() {
       <Header />
       <Sidebar />
       <Main>
-	  <Countainer>
-	        <Outlet />
-	  </Container>
+        <Container>
+          <Outlet />
+        </Container>
       </Main>
     </StyledAppLayout>
   );
