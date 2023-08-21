@@ -43,6 +43,7 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
+
 function CabinRow({ cabin }) {
   const { id: cabinId, name, maxCapacity, regularPrice, discount, image } = cabin;
 
