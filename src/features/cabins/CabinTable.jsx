@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import Menus from "../../ui/Menus";
 import Spinner from "../../ui/Spinner";
@@ -22,8 +23,12 @@ const TableHeader = styled.header`
 
 function CabinTable() {
   const { isLoading, cabins } = useCabins();
+  const [searchParams] = useSearchParams();
 
   if (isLoading) return <Spinner />;
+
+  const filterValue = searchParams.get("discount");
+  console.log(filterValue);
 
   return (
     <Menus>
