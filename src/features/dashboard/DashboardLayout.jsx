@@ -17,10 +17,10 @@ const StyledDashboardLayout = styled.div`
 
 function DashboardLayout() {
   const { bookings, isLoading: isLoading1 } = useRecentBookings();
-  const { isLoading: isLoading2, stays, confirmedStays, numDays } = useRecentStays();
-  const { cabins, isLoading: isLoading3 } = useCabins()
+  const { isLoading: isLoading2, confirmedStays, numDays } = useRecentStays();
+  const { cabins, isLoading: isLoading3 } = useCabins();
 
-  if (isLoading1 || isLoading2 || isLoading3) return <Spinner />
+  if (isLoading1 || isLoading2 || isLoading3) return <Spinner />;
   return (
     <StyledDashboardLayout>
       <Stats
@@ -36,7 +36,7 @@ function DashboardLayout() {
 
       <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>
-  )
+  );
 }
 
 export default DashboardLayout;

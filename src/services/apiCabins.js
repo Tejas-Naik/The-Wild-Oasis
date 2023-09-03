@@ -37,6 +37,8 @@ export async function createEditCabin(newCabin, id) {
             console.error(editError);
             throw new Error("Cabin could not be edited");
         }
+
+        const { data } = await query.select();
         // 2. Upload image
         const { error: storageError } = await supabase.storage
             .from("cabins")
