@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../../ui/Button";
 import ButtonGroup from "../../ui/ButtonGroup";
 import ButtonText from "../../ui/ButtonText";
+import Empty from "../../ui/Empty";
 import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 import Spinner from "../../ui/Spinner";
@@ -33,7 +34,7 @@ function BookingDetail() {
   const navigate = useNavigate();
 
   if (isLoading || isDeleting) return <Spinner />;
-
+  if (!booking) return <Empty resourceName="booking" />
   const { status, id: bookingId } = booking;
 
   const statusToTagName = {
